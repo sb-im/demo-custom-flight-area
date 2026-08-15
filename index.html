@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperDock M400 自定义飞行区绘制 Demo</title>
+  </head>
+  <body>
+    <div id="cesiumContainer"></div>
+
+    <aside class="panel">
+      <header class="panel-header">
+        <h1>自定义飞行区绘制 Demo</h1>
+        <p>草莓创新 SuperDock M400 自动机场 · 同时适配 DJI 机场</p>
+      </header>
+
+      <section class="block">
+        <h2>1. 绘制</h2>
+        <div class="row">
+          <label class="radio">
+            <input type="radio" name="areaType" value="dfence" checked />
+            <span class="dot dfence"></span>作业区 dfence
+          </label>
+          <label class="radio">
+            <input type="radio" name="areaType" value="nfz" />
+            <span class="dot nfz"></span>限飞区 nfz
+          </label>
+        </div>
+        <div class="row">
+          <button id="drawPolygon" type="button">画多边形</button>
+          <button id="drawCircle" type="button">画圆</button>
+        </div>
+        <p class="hint" id="drawHint">
+          多边形：左键落子，双击或右键结束，Esc 取消。圆形：左键定圆心，再次左键定半径。
+        </p>
+      </section>
+
+      <section class="block">
+        <h2>2. 区域列表 <span class="count" id="areaCount">0</span></h2>
+        <ul class="area-list" id="areaList"></ul>
+        <p class="hint" id="emptyHint">还没有区域，先画一个或导入示例文件。</p>
+      </section>
+
+      <section class="block">
+        <h2>3. 文件</h2>
+        <div class="row">
+          <button id="exportBtn" type="button" class="primary">导出 JSON</button>
+          <button id="importBtn" type="button">导入 JSON</button>
+        </div>
+        <div class="row">
+          <button id="sampleBtn" type="button">加载示例</button>
+          <button id="clearBtn" type="button" class="danger">清空</button>
+        </div>
+        <input id="importInput" type="file" accept=".json,application/json" hidden />
+        <div id="fileInfo" class="file-info" hidden></div>
+      </section>
+
+      <footer class="panel-footer">
+        <a href="https://docs.sb.im/" target="_blank" rel="noreferrer">SuperDock 开发者文档</a>
+        ·
+        <a href="https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/custom-flight-area.html" target="_blank" rel="noreferrer">DJI 上云 API</a>
+      </footer>
+    </aside>
+
+    <div id="toast" class="toast" hidden></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

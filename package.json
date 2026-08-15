@@ -1,0 +1,24 @@
+{
+  "name": "demo-custom-flight-area",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DJI 上云 API 自定义飞行区绘制 / 导出 / 导入的最小参考实现",
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cesium": "^1.144.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-cesium": "^1.2.23",
+    "vitest": "^3.2.4"
+  }
+}
