@@ -10,6 +10,8 @@ on a real SuperDock M400.
 The file format follows the DJI Cloud API custom flight area protocol and can also serve as a
 reference for DJI Dock integrations. Consult DJI's documentation for model and firmware support.
 
+![](./assets/demo.gif)
+
 - **Operation area `dfence`**: the aircraft can operate only inside the area and cannot cross its
   boundary.
 - **Restricted zone `nfz`**: the aircraft cannot enter the area and can operate outside it.
